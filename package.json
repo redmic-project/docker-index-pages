@@ -1,0 +1,45 @@
+{
+  "name": "welcome-static-pages",
+  "version": "1.0.0",
+  "author": "Observatorio Ambiental Granadilla",
+  "description": "Welcome static pages generator",
+  "contributors": [
+    {
+      "name": "Ignacio Lorenzo García",
+      "email": "nacho@oag-fundacion.org"
+    },
+    {
+      "name": "Pedro E. Trujillo Brito",
+      "email": "pedro@redmic.es"
+    },
+    {
+      "name": "Noel Alonso Expósito",
+      "email": "noel@redmic.es"
+    },
+    {
+      "name": "Carlos Alberto González Carballo",
+      "email": "carlos@redmic.es"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/redmic-project/static-pages.git"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "commander": "^2.15.1",
+    "express": "^4.16.3",
+    "morgan": "^1.8.2",
+    "pug": "^2.0.3",
+    "winston": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=6.0",
+    "npm": ">=3.10"
+  },
+  "main": "app",
+  "license": "ISC"
+}
