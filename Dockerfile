@@ -1,5 +1,7 @@
 FROM node:alpine
 
+LABEL maintainer="info@redmic.es"
+
 ENV \
 	DIRPATH="/opt/redmic" \
 	SITE_PORT="3000" \
