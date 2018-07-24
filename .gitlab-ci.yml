@@ -26,7 +26,6 @@ docker-build-stable:
   services:
     - docker:dind
   only:
-    - branches
     - master
   script:
     - docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${CI_REGISTRY}
