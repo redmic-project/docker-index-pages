@@ -33,12 +33,11 @@ function exposeContents(directoryName) {
 }
 
 exposeContents(sitePath);
-exposeContents('index.js');
-exposeContents('index.css');
 
 app.set('view engine', 'pug')
 	.set('views', path.join(__dirname, '..', 'views'))
-	.get('/', function (req, res) {
+	.get('/', function(req, res) {
+
 		res.render('index', {
 			path: sitePath
 		});

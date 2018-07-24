@@ -1,8 +1,8 @@
 {
-  "name": "welcome-static-pages",
+  "name": "index-pages",
   "version": "1.0.0",
   "author": "Observatorio Ambiental Granadilla",
-  "description": "Welcome static pages generator",
+  "description": "Index pages",
   "contributors": [
     {
       "name": "Ignacio Lorenzo García",
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/redmic-project/static-pages.git"
+    "url": "https://gitlab.com/redmic-project/docker/index-pages.git"
   },
   "private": true,
   "scripts": {
