@@ -1,12 +1,11 @@
-image: redmic/web-gitlab
+image: docker:stable
 
 stages:
   - package
   - test-package
 
-docker-build-commit:
+docker-build-development:
   stage: package
-  image: redmic/docker-gitlab
   variables:
     DOCKER_DRIVER: overlay2
   services:
@@ -20,15 +19,13 @@ docker-build-commit:
     - docker build -t ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHA} -t ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}-latest .
     - docker push ${CI_REGISTRY_IMAGE}
 
-docker-build-tag:
+docker-build-stable:
   stage: package
-  image: redmic/docker-gitlab
   variables:
     DOCKER_DRIVER: overlay2
   services:
     - docker:dind
   only:
-    - branches
     - master
   script:
     - docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${CI_REGISTRY}
@@ -37,7 +34,6 @@ docker-build-tag:
 
 container-scanning:
   stage: test-package
-  image: docker:stable
   variables:
     DOCKER_DRIVER: overlay2
   allow_failure: true
