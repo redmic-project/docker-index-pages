@@ -1,9 +1,8 @@
-FROM node:alpine
+FROM node:11-alpine
 
 LABEL maintainer="info@redmic.es"
 
-ENV \
-	DIRPATH="/opt/redmic" \
+ENV DIRPATH="/index-pages" \
 	SITE_PORT="3000" \
 	SITE_PATH="content"
 
@@ -15,4 +14,4 @@ RUN npm install
 
 EXPOSE ${SITE_PORT}
 
-ENTRYPOINT node app --port=${SITE_PORT} --path=${SITE_PATH}
+CMD ["node", "app", "--port=${SITE_PORT}", "--path=${SITE_PATH}"]
