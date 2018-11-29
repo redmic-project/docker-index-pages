@@ -2,7 +2,7 @@ FROM node:11-alpine
 
 LABEL maintainer="info@redmic.es"
 
-ARG DIRPATH="/index-pages" \
+ENV DIRPATH="/index-pages" \
 	SITE_PORT="3000" \
 	SITE_PATH="content"
 
