@@ -1,8 +1,8 @@
-function createItemTitle(config, item) {
+function createItemTitle(path, config, item) {
 
 	var node = document.createElement('div'),
 		img = document.createElement('img'),
-		imgPath = config.resourcesPath + item.img;
+		imgPath = path + '/' + config.resourcesPath + '/' + item.img;
 
 	node.setAttribute('class', 'box-title');
 	img.setAttribute('src', imgPath);
@@ -43,10 +43,10 @@ function getItemHref(config, item) {
 	return href;
 }
 
-function createItemBox(config, item) {
+function createItemBox(path, config, item) {
 
 	var boxNode = document.createElement('a'),
-		titleNode = createItemTitle(config, item),
+		titleNode = createItemTitle(path, config, item),
 		contentNode = createItemContent(item);
 
 	boxNode.setAttribute('class', 'box');
@@ -70,7 +70,7 @@ function createTitle(config) {
 	parentNode.appendChild(titleNode);
 }
 
-function createContent(config) {
+function createContent(path, config) {
 
 	createTitle(config);
 
@@ -79,7 +79,7 @@ function createContent(config) {
 
 	for (var i = 0; i < items.length; i++) {
 		var item = items[i],
-			itemBox = createItemBox(config, item);
+			itemBox = createItemBox(path, config, item);
 
 		boxContainerNode.appendChild(itemBox);
 	}

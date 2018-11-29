@@ -5,14 +5,15 @@ html
 		meta(charset = 'utf-8')
 		meta(name = 'viewport' content = 'width = device-width, initial-scale = 1')
 
+		link(rel='icon' href='/' + path + '/favicon.ico' sizes='16x16 32x32 48x48' type='image/x-icon')
 		style
-			include ../index.css
+			include ./index.css
 
 		script
-			include ../index.js
+			include ./index.js
 
 		script(src='/' + path + '/config.js')
 
-	body(onload='createContent(config)')
+	body(onload='createContent("' + path + '", config)')
 		.page-title#title
 		.box-container#boxContainer
